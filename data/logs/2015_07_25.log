@@ -1,0 +1,4 @@
+[2015_07_25 18:03:29 logMessage]:{"id":1,"name":"xiao","extra":{"age":18,"lover":{"name":"qjm","age":18},"index":[1,2,3,4,5]}}[2015_07_25 18:04:13] : {"id":1,"name":"xiao","extra":{"age":18,"lover":{"name":"qjm","age":18},"index":[1,2,3,4,5]}}
+[2015_07_25 18:04:22] : {"id":1,"name":"xiao","extra":{"age":18,"lover":{"name":"qjm","age":18},"index":[1,2,3,4,5]}}
+[2015_07_25 18:25:23] : {"id":1,"name":"xiao","extra":{"age":18,"lover":{"name":"qjm","age":18},"index":[1,2,3,4,5]}}
+[2015_07_25 18:25:42] : {"id":1,"name":"xiao","extra":{"age":18,"lover":{"name":"qjm","age":18},"index":[1,2,3,4,5]}}
