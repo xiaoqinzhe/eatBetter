@@ -1,17 +1,20 @@
 <?php 
 
-require_once "lib/thumb_func.php";
+require_once('source/common/common_func.php');
 
-$data=array(
+echo stringToDb('/sdf/"\\');
+
+/*$data=array(
 		"code"=>200,
 		"message"=>'asdf',
-		"data"=> array("schoolid"=>array(1,2,3),
-			"name"=>array("a","b","c"))
+		"data"=> array(array('id'=>1,'name'=>'adsf'),
+			array('id'=>2,'name'=>'adsf'),
+			array('id'=>3,'name'=>'adsf'))
 	);
 echo json_encode($data);
 echo '<br/>';
 echo md5("123456");
 echo '<br/>';
-echo strlen('http://localhost/images/users/default.jpg');
+echo strlen('http://localhost/images/users/default.jpg');*/
 
 ?>

@@ -12,9 +12,9 @@ class Db{
 			'host' => 'localhost',
 			'username' => 'root',
 			'passwd' => 'root',
-			'dbname' => 'test',
+			'dbname' => 'eatBetter',
 			'port' => '80',
-			'autocommit' => false
+			'autocommit' => true
 		);
 	private $mysqli = null;          //mysqli 对象
 	private $connected = false;      //是否连接上数据库
@@ -43,7 +43,7 @@ class Db{
      * @throws Execption
      */
 	public function connect(){
-		if(!$this->connected){
+		if(!$this->connected||$this->mysqli==null){
 			$this->mysqli = @new mysqli($this->config['host'],$this->config['username'],$this->config['passwd'],$this->config['dbname']);
 			if($this->mysqli->connect_errno){
 				throw new Exception("数据库连接失败：".$this->mysqli->connect_error);
@@ -185,7 +185,8 @@ class Db{
 
     public function close(){
     	if($this->mysqli!=null)
-    		$this->mysqli->close();
+    		@$this->mysqli->close();
+        $this->connected=false;
     }
 }
 

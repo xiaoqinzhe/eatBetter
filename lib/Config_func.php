@@ -1,15 +1,15 @@
 <?php
 
-$config = require_once 'config/config.php';
+$Config = require_once $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 
 function C($key=null){
-	global $config;
+	global $Config;
 	if($key==null)
-		return $config;
+		return $Config;
 	else
 	{
-		if(array_key_exists($key,$config))
-			return $config["{$key}"];
+		if(array_key_exists($key,$Config))
+			return $Config["{$key}"];
 		else return null;
 	}
 }
