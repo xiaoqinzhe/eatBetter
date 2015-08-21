@@ -1,8 +1,8 @@
 <?php 
 
 require_once('source/common/common_func.php');
-
-echo stringToDb('/sdf/"\\');
+//$_POST['a']=null;
+var_dump(is_null($_POST['a']));
 
 /*$data=array(
 		"code"=>200,

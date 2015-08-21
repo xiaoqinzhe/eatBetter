@@ -1,0 +1,1 @@
+000000001439952730{"statuscode":0,"message":"sucess","data":{"user_id":"1","username":"xiao","sex":"\u7537","access":"0","phone":"18819451372","time":"2015-08-14","imageurl":"http:\/\/localhost\/images\/users\/55d079af4d8c5.jpg","school_id":"1","studentnumber":null,"truename":null}}

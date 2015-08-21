@@ -1,0 +1,1 @@
+000000001439953257{"statuscode":0,"message":"sucess","data":{"user_id":"2","username":"zhe","sex":"\u7537","access":"0","phone":"18819451371","time":"2015-08-14","imageurl":"http:\/\/localhost\/images\/users\/default.jpg","school_id":"1","studentnumber":null,"truename":null}}

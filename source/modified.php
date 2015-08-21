@@ -3,12 +3,12 @@
 require_once('common/common_func.php');
 require_once('../lib/Db.class.php');
 
-$_POST['user_id']=1;        //测试数据
+/*$_POST['user_id']=1;        //测试数据
 $_POST['new_username']="xiao";
 $_POST['old_password']='123456';
 $_POST['new_password']='123456';
 $_POST['force']=true;
-$_POST['new_sex']='男';
+$_POST['new_sex']='男';*/
 
 if(!isset($_GET['content']))
 	echo getJsonResponse(3,'type参数没有设置',null);
