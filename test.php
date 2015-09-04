@@ -3,7 +3,7 @@
 require_once('source/common/common_func.php');
 //$_POST['a']=null;
 var_dump(is_null($_POST['a']));
-
+echo "aa";
 /*$data=array(
 		"code"=>200,
 		"message"=>'asdf',
