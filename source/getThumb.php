@@ -5,9 +5,10 @@ require_once('../lib/thumb_func.php');
 
 $_GET['width']=20;
 $_GET['height']=20;
-$_GET['imageurl']="http://localhost/images/users/default.jpg";
+$_GET['imageurl']="http%3A%2F%2Flocalhost%2Fimages%2Fuser%2Fdefault.jpg";
 
 if(isset($_GET['imageurl'])){
+	$_GET['imageurl']=urldecode($_GET['imageurl']);
 	$urlinfo=parse_url($_GET['imageurl']);
 	$imagepath;
 	if($urlinfo['host']==getServerIp()){
@@ -40,8 +41,8 @@ if(isset($_GET['imageurl'])){
 			$dst_w=ceil($src_w*$scale);
 			$dst_h=ceil($src_h*$scale);
 		}else{
-			$dst_w=$_GET['width'];
-			$dst_h=$_GET['height'];
+			$dst_w=(int)$_GET['width'];
+			$dst_h=(int)$_GET['height'];
 		}
 		$src_image=$createfunc($imagepath);
 		$dst_image=imagecreatetruecolor($dst_w, $dst_h);
