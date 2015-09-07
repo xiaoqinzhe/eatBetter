@@ -10,7 +10,9 @@ var_dump(parse_url("http://localhost/images/user/default.jpg"));
 echo $major.$max.$min; */
 
 //$_POST['a']=null;
+
 //var_dump(is_null($_POST['a']));
+
 
 /*$data=array(
 		"code"=>200,
