@@ -7,7 +7,7 @@ require_once('../lib/Log.class.php');
 
 $_POST['school_id']=1;
 
-if(isset($_POST['school_id'])&&is_int($_POST['school_id'])){
+if(isset($_POST['school_id'])){
 	$cache=new Cache();
 	$cachename=basename(__FILE__)."school_id={$_POST['school_id']}.txt";
 	if(($val=$cache->get($cachename))!==false){

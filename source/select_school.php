@@ -5,7 +5,7 @@ require_once('../lib/Db.class.php');
 require_once('../lib/Cache.class.php');
 require_once('../lib/Log.class.php');
 
-$_POST['province']='广东省';
+//$_POST['province']='广东省';
 //$_POST['city']='广州市';
 
 $sql='';
@@ -15,16 +15,16 @@ if(isset($_GET['get'])){
 		$sql="select distinct province from schools;";
 		$cachename.="get=province.txt";
 	}else if($_GET['get']=='city'){
-		if(isset($_POST['province'])&&is_string($_POST['province'])){
+		if(isset($_POST['province'])){
 			$sql="select distinct city from schools where province='{$_POST['province']}';";
 			$cachename.="get=city&province={$_POST['province']}";
 			$cachename=basename(__FILE__).md5($cachename).'.txt';       //有中文
 		}else{
-			echo getJsonResponse(3,'post参数没有设置',null);
+			echo getJsonResponse(2,'post参数没有设置',null);
 			exit();
 		}
 	}else if($_GET['get']=='school'){
-		if(isset($_POST['province'])&&is_string($_POST['province'])){
+		if(isset($_POST['province'])){
 			if(!isset($_POST['city'])){
 				$sql="select school_id,schoolname,schoolarea from schools where province='{$_POST['province']}';";
 				$cachename.="get=city&province={$_POST['province']}&city=null";
@@ -36,15 +36,15 @@ if(isset($_GET['get'])){
 				$cachename=basename(__FILE__).md5($cachename).'.txt';       //有中文
 			}
 		}else{
-			echo getJsonResponse(3,'post参数没有设置',null);
+			echo getJsonResponse(2,'post参数没有设置',null);
 			exit();
 		}
 	}else{
-		echo getJsonResponse(3,'get参数错误',null);
+		echo getJsonResponse(2,'get参数错误',null);
 		exit();
 	}
 }else{
-	echo getJsonResponse(3,'get参数没有设置',null);
+	echo getJsonResponse(2,'get参数没有设置',null);
 	exit();
 }
 $db=Db::getInstance();

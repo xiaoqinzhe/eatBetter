@@ -1,8 +1,16 @@
 <?php 
 
 require_once('source/common/common_func.php');
+
+//preg_match_all("//", "http://localhost/images/user/default.jpg",$array);
+var_dump(parse_url("http://localhost/images/user/default.jpg"));
+//var_dump($array);
+
+/* list($major,$max,$min)=explode(".", "1.0",3);
+echo $major.$max.$min; */
+
 //$_POST['a']=null;
-var_dump(is_null($_POST['a']));
+//var_dump(is_null($_POST['a']));
 
 /*$data=array(
 		"code"=>200,

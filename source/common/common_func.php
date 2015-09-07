@@ -40,6 +40,20 @@ function checkUserId($id){
 	}
 }
 
+//检验用户是否合法
+function checkUserToken(&$db,$id,$token){
+		$res=false;
+		if(is_int($id))
+			$res=$db->query("select access_token from users where user_id={$id};");
+		if($res){
+			if($res[0]['access_token']==$token)
+				return true;			
+			else return false;
+		}else{
+			return false;
+		}
+}
+
 //得到服务器ip
 function getServerIp(){
 	return C('serverIp');

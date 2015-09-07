@@ -78,7 +78,7 @@ class Db{
      * @return mixed
      */
     public function query($str) {
-    	//$this->connect();
+    	$this->connect();
     	if(empty($str)){
     		$this->error="查询字段不能为空";
     		return false;
@@ -105,7 +105,7 @@ class Db{
      * @return mixed
      */
     public function execute($str) {
-        //$this->connect();
+        $this->connect();
         if(empty($str)){
     		$this->error="查询字段不能为空";
     		return false;

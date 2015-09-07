@@ -7,14 +7,14 @@ require_once('../lib/Log.class.php');
 
 $_POST['canteen_id']=1;
 
-if(isset($_POST['canteen_id'])&&is_int($_POST['canteen_id'])){
+if(isset($_POST['canteen_id'])){
 	$cache=new Cache();
 	$cachename=basename(__FILE__)."canteen_id={$_POST['canteen_id']}.txt";
 	if(($val=$cache->get($cachename))!==false){
 		echo $val;
 		exit();
 	}else{
-		$sql="select canteenname,imageurl from school_canteen,canteens 
+		$sql="select canteenname,imageurl,grade from school_canteen,canteens 
 				where school_canteen.canteen_id={$_POST['canteen_id']} and 
 				school_canteen.canteen_id=canteens.canteen_id;";
 		$db=Db::getInstance();
@@ -32,7 +32,7 @@ if(isset($_POST['canteen_id'])&&is_int($_POST['canteen_id'])){
 					exit();
 				}
 				//算饭堂平均分
-				$res[0]['grade']=getAvgOfCanteen($db);
+				//$res[0]['grade']=getAvgOfCanteen($db);
 				//食堂食物总数	
 				$res[0]['count']=getCountFood($db);
 				//心愿满足率

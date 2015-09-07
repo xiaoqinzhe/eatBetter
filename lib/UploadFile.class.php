@@ -177,6 +177,7 @@ class UploadFile{
 		$file['extension']=$ext;
 		if(!empty($this->config['allowExts'])){				
 			if(!in_array(strtolower($ext),$this->config['allowExts'])){
+				$this->errorNo=9;
 				$this->errorMsg="文件类型错误";
 				return false;
 			}else {
