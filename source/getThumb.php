@@ -1,7 +1,6 @@
 <?php 
 
 require_once('common/common_func.php');
-require_once('../lib/thumb_func.php');
 
 $_GET['width']=20;
 $_GET['height']=20;
