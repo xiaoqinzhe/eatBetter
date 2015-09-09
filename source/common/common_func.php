@@ -73,4 +73,38 @@ function dbToString($str){
 	return $str;
 }
 
+/*
+ * 检查是否存在号码
+ */
+function checkPhone(&$db,$phone){
+	$res=$db->query("select phone from users where phone='{$phone}';");
+	if($res===false){
+		echo getJsonResponse(1,$db->error,null);
+		Log::error_log('database error：'.$db->error.' in '.basename(__FILE__));
+		$db->close();
+		exit();
+	}
+	if(empty($res)){
+		return false;
+	}else
+		return true;
+}
+
+/*
+ * 检查是否存在username
+ */
+function checkUserName(&$db,$username){
+	$res=$db->query("select user_id from users where username='{$username}';");
+	if($res===false){
+		echo getJsonResponse(1,$db->error,null);
+		Log::error_log('database error：'.$db->error.' in '.basename(__FILE__));
+		$db->close();
+		exit();
+	}
+	if(empty($res)){
+		return false;
+	}else
+		return true;
+}
+
 ?>

@@ -28,11 +28,11 @@ if(isset($_GET['type'])){
 		Log::error_log('database error：'.$db->error.' in '.basename(__FILE__));
 	}
 	if($_GET['type']=='send'){
-		/* if(checkPhone($db)){
+		if(checkPhone($db,$_POST['phone'])){
 			echo getJsonResponse(4,'手机号已经注册过',null);
 			$db->close();
 			exit();
-		} */
+		}
 		$voice=new VoiceVerify($serverIp,$port,$version);
 		$voice->setAccount($AccountSid, $AccountToken);
 		$voice->setAppId($AppId);
@@ -86,20 +86,6 @@ if(isset($_GET['type'])){
 }else{
 	echo getJsonResponse(2,"get参数错误",null);
 	exit();
-}
-
-function checkPhone(&$db){
-	$res=$db->query("select phone from users where phone='{$_POST['phone']}';");
-	if($res===false){
-		echo getJsonResponse(1,$db->error,null);
-		Log::error_log('database error：'.$db->error.' in '.basename(__FILE__));
-		$db->close();
-		exit();
-	}
-	if(empty($res)){
-		return false;
-	}else 
-		return true;
 }
 
 ?>
