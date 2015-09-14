@@ -1,3 +1,0 @@
-[2015_09_13 19:29:36] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in get_food_comment.php
-[2015_09_13 19:30:18] : database error：Table 'eatbetter.food_comments_favor' doesn't exist in get_food_comment.php
-[2015_09_13 19:31:14] : database error：Unknown column 'userid' in 'field list' in get_food_comment.php
