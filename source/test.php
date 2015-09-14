@@ -9,5 +9,5 @@ try {
 } catch (Exception $e) {
 	echo $e->getMessage();
 }
-
+var_dump(file_put_contents("../aa.txt", "asdfas"));
 var_dump(file_exists("../lib/Cache.class.php"));

@@ -62,15 +62,17 @@ if(isset($_GET['page'])&&isset($_GET['come_true'])){
 }
 
 function getMethod(&$db,&$value){
-	$sql="select content from foodmethod where user_id={$value['user_id']} and
+	$sql="select content,imageurl from foodmethod where user_id={$value['user_id']} and
 		 canteen_id={$value['canteen_id']} and food_id={$value['food_id']} order by sequence;";
 	$res=$db->query($sql);
 	if($res!==false){
 		$value['content']=array();
+		$value['imagefile']=array();
 		if(empty($res))
 			$value['content']=null;
 		foreach ($res as $val){
 			$value['content'][]=$val['content'];
+			$value['imagefile'][]=$val['imageurl'];
 		}
 	}else{
 		echo getJsonResponse(1,$db->error,null);
