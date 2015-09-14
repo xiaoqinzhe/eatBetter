@@ -1,6 +1,14 @@
 <?php 
 
-//require_once('source/common/common_func.php');
+require_once('lib/Db.class.php');
+
+$db=Db::getInstance();
+try {
+	$db->connect();
+	echo "success";
+} catch (Exception $e) {
+	echo $db->error;
+}
 
 //echo urlencode('http://localhost/images/user/default.jpg');
 
