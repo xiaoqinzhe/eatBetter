@@ -10,4 +10,4 @@ try {
 	echo $e->getMessage();
 }
 
-var_dump(file_exists("./lib/Cache.class.php"));
+var_dump(file_exists("../lib/Cache.class.php"));
