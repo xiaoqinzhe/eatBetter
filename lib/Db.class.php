@@ -44,7 +44,7 @@ class Db{
      */
 	public function connect(){
 		if(!$this->connected||$this->mysqli==null){
-			$this->mysqli = @new mysqli($this->config['host'],$this->config['username'],$this->config['passwd'],$this->config['dbname']);
+			$this->mysqli = @new mysqli($this->config['host'],$this->config['username'],$this->config['passwd'],$this->config['dbname'],$this->config['port']);
 			if($this->mysqli->connect_errno){
 				throw new Exception("数据库连接失败：".$this->mysqli->connect_error);
 			}

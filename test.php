@@ -10,6 +10,8 @@ try {
 	echo $e->getMessage();
 }
 
+var_dump(file_exists("/lib/Cache.class.php"));
+
 //echo urlencode('http://localhost/images/user/default.jpg');
 
 //preg_match_all("//", "http://localhost/images/user/default.jpg",$array);
