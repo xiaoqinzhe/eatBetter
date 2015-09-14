@@ -22,10 +22,10 @@ return array(
 		'savePath'     =>  '../uploads',
 	    //缓存
 	    //'cachePath'    =>  $_SERVER['DOCUMENT_ROOT'].'data/cache',
-		'cachePath'    =>  '../data/cache',
+		'cachePath'    =>  './data/cache',
 	    //错误日志
 	    //'logPath' => $_SERVER['DOCUMENT_ROOT'].'data/logs',
-		'logPath' => '../data/logs',
+		'logPath' => './data/logs',
 	    'logMail' => 'xiaoqinzhe@qq.com'
 	);
 
