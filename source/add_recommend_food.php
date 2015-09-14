@@ -38,7 +38,7 @@ if(isset($_POST['user_id'])&&isset($_POST['access_token'])&&isset($_POST['cantee
 	if($flag)
 		checkExist($db, $foodid);
 	$imageurl="http://".getServerIp()."/uploads/recommendedfood/default.jpg";
-	if(isset($_FILES['imageurl'])){
+	if(isset($_FILES['imagefile'])){
 		//上传文件
 		$config1=array(
 				'maxSize'      =>  2100000,    // 上传文件的最大值,2M多
@@ -47,8 +47,7 @@ if(isset($_POST['user_id'])&&isset($_POST['access_token'])&&isset($_POST['cantee
 				'savePath'     =>  $_SERVER['DOCUMENT_ROOT'].'uploads/recommendedfood/',// 上传文件保存路径
 		);
 		$up=new UploadFile($config1);
-		//上传食物图片
-		$res1=$up->uploadOne($_FILES['imageurl']);
+		$res1=$up->uploadOne($_FILES['imagefile']);
 		if($res1!==false){
 			$savePath='http://'.getServerIp().'/uploads/recommendedfood/'.$res1['savename'];
 			$imageurl=stringToDb($savePath);
@@ -59,10 +58,10 @@ if(isset($_POST['user_id'])&&isset($_POST['access_token'])&&isset($_POST['cantee
 			exit();
 		}
 	}
-	$sql="insert into recommendedfood values(null,{$_POST['user_id']},{$_POST['canteen_id']},{$foodid},current_date(),0,'{$imageurl}',false,null);";
+	$sql="insert into recommendedfood values({$_POST['user_id']},{$_POST['canteen_id']},{$foodid},current_date(),0,'{$imageurl}',false,null);";
 	$res=$db->execute($sql);
 	if($res){
-		//echo getJsonResponse(0,"success",null);
+		echo getJsonResponse(0,"success",null);
 	}else{
 		echo getJsonResponse(1,$db->error,null);
 		Log::error_log('database error：'.$db->error.' in '.basename(__FILE__));
@@ -70,47 +69,10 @@ if(isset($_POST['user_id'])&&isset($_POST['access_token'])&&isset($_POST['cantee
 		$db->close();
 		exit();
 	}
-	//查推荐菜的id
-	$rec=$db->query("select recommend_id from recommendedfood where user_id={$_POST['user_id']} and canteen_id={$_POST['canteen_id']} and food_id={$foodid};");
-	if($rec===false){
-		echo getJsonResponse(1,$db->error,null);
-		Log::error_log('database error：'.$db->error.' in '.basename(__FILE__));
-		$db->rollback();
-		$db->close();
-		exit();
-	}
-	if(empty($rec)){
-		echo getJsonResponse(1,"",null);
-		Log::error_log('database error：'.$db->error.' in '.basename(__FILE__));
-		$db->rollback();
-		$db->close();
-		exit();
-	}
-	$recid=$rec[0]['recommend_id'];
-	$len=sizeof($_POST['content']);
-	//上传步骤图片
-	$imagefile=array();
-	for($i=1;$i<=$len;$i++){
-		$name='imagefile'.$i;
-		if(isset($_FILES[$name])){
-			$res1=$up->uploadOne($_FILES[$name]);
-			if($res1!==false){
-				$savePath='http://'.getServerIp().'/uploads/recommendedfood/'.$res1['savename'];
-				$savePath=stringToDb($savePath);
-				$imagefile[]=$savePath;
-			}else{  //上传图片失败
-				echo getJsonResponse(4,$uf->errorMsg,null);
-				$db->rollback();  //回滚
-				$db->close();
-				exit();
-			}
-		}
-	}
 	//做法步骤
 	if(isset($_POST['content']))
-		setContent($db,$recid,$_POST['content'],$imagefile);
+		setContent($db,$foodid,$_POST['content']);
 	$db->commit();
-	echo getJsonResponse(0,'success',$rec[0]['recommend_id']);
 	$db->close();
 }else{
 	echo getJsonResponse(2,"参数没有设置",null);
@@ -163,7 +125,7 @@ function checkFoodname(&$db,$foodname,&$flag){
 			}
 		}else{
 			$flag=1;
-			return $res[0];
+			return $res[0]['food_id'];
 		}
 	}
 }
@@ -216,15 +178,13 @@ function checkExist(&$db, $foodid){
  * @param unknown $foodid
  * @param unknown $content
  */
-function setContent(&$db,$recid,$content,$imagefile){
+function setContent(&$db,$foodid,$content){
 	if($content==null)
 		return;
 	//$method=explode("||", $content);
 	$method=json_decode($content,true);
 	for($i=1;$i<=sizeof($method);$i++){
-		if(empty($imagefile[$i-1]))
-			$imagefile[$i-1]='http://'.getServerIp().'/uploads/recommendedfood/default.jpg';
-		$sql="insert into foodmethod values({$recid},{$i},'".stringToDb($method[$i-1])."','{$imagefile[$i-1]}');";
+		$sql="insert into foodmethod values({$_POST['user_id']},{$_POST['canteen_id']},{$foodid},{$i},'".stringToDb($method[$i-1])."');";
 		$res=$db->execute($sql);
 		if(!$res){
 			echo getJsonResponse(1,$db->error,null);
