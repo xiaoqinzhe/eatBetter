@@ -1,6 +1,6 @@
 <?php 
 
-require_once('lib/Db.class.php');
+require_once('../lib/Db.class.php');
 
 $db=Db::getInstance();
 try {
