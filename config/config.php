@@ -18,11 +18,14 @@ return array(
 		//'port' => '80',
 		'port' => SAE_MYSQL_PORT,
 		//上传文件
-	    'savePath'     =>  $_SERVER['DOCUMENT_ROOT'].'uploads', 
+	    //'savePath'     =>  $_SERVER['DOCUMENT_ROOT'].'uploads', 
+		'savePath'     =>  '../uploads',
 	    //缓存
-	    'cachePath'    =>  $_SERVER['DOCUMENT_ROOT'].'data/cache',
+	    //'cachePath'    =>  $_SERVER['DOCUMENT_ROOT'].'data/cache',
+		'cachePath'    =>  '../data/cache',
 	    //错误日志
-	    'logPath' => $_SERVER['DOCUMENT_ROOT'].'data/logs',
+	    //'logPath' => $_SERVER['DOCUMENT_ROOT'].'data/logs',
+		'logPath' => '../data/logs',
 	    'logMail' => 'xiaoqinzhe@qq.com'
 	);
 

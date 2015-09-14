@@ -56,7 +56,7 @@ if(isset($_POST['user_id'])&&isset($_POST['access_token'])&&isset($_POST['cantee
 					'maxSize'      =>  2100000,    // 上传文件的最大值,2M多
 					'allowExts'    =>  array('png','jpg'),    // 允许上传的文件后缀 留空不作后缀检查
 					'allowTypes'   =>  array('image/png','image/jpeg'),    // 允许上传的文件类型 留空不做检查
-					'savePath'     =>  $_SERVER['DOCUMENT_ROOT'].'uploads/comments/',// 上传文件保存路径
+					'savePath'     =>  '../uploads/comments/',// 上传文件保存路径
 			);
 			$up=new UploadFile($config1);
 			for($i=1;$i<=4;$i++){
