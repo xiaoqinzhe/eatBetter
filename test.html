@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta charset="utf-8"/>
 <title>haha</title>
 </head>
 <body>
-    <form action="test.php" method="post" enctype="multipart/form-data">
+    <form action="source/add_recommend_food.php" method="post" enctype="multipart/form-data">
         <!-- 什么鬼bookname:<input name="bookname" type="text"/> -->
         <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
-        上传文件:<input type="file" name="userfile" />
+        上传文件:<input type="file" name="imagefile" />
+        <br/>
+           上传文件:<input type="file" name="imagefile2" />
         <br/>
         <input type="submit" value="upload"/>
+        <input type="number" name="age"/>
     </form>
 </body>
 </html>

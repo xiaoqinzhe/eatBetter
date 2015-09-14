@@ -48,7 +48,7 @@ class Cache{
 			return false;
 		}
 		$time=(int)substr($content,0,18);
-		if(time()>$time){
+		if($time!=0&&time()>$time){
 			$this->error="缓存失效";
 			return false;
 		}

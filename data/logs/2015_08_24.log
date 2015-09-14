@@ -1,0 +1,2 @@
+[2015_08_24 17:47:15] : database error：查询评论id出错 in add_food_comment.php
+[2015_08_24 18:14:07] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '://localhost/uploads/comments/)' at line 1 in add_food_comment.php

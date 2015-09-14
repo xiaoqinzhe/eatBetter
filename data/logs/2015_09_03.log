@@ -1,0 +1,2 @@
+[2015_09_03 20:51:56] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where canteen_id=1' at line 1 in count_canteens_grade.php
+[2015_09_03 20:52:49] : database error：Unknown column 'grade' in 'field list' in count_canteens_grade.php

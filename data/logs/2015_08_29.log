@@ -1,0 +1,8 @@
+[2015_08_29 17:29:52] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cur_date(),0,http://localhostuploads/recommendedfood/default.jpg,false,null)' at line 1 in add_recommend_food.php
+[2015_08_29 17:31:58] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '://localhostuploads/recommendedfood/default.jpg,false,null)' at line 1 in add_recommend_food.php
+[2015_08_29 17:32:32] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '://localhostuploads/recommendedfood/default.jpg,false,null)' at line 1 in add_recommend_food.php
+[2015_08_29 17:37:13] : database error：Column 'sequence' cannot be null in add_recommend_food.php
+[2015_08_29 17:45:12] : database error：Column 'sequence' cannot be null in add_recommend_food.php
+[2015_08_29 17:46:07] : database error：Duplicate entry '1-1-18' for key 'PRIMARY' in add_recommend_food.php
+[2015_08_29 17:46:43] : database error：Cannot add or update a child row: a foreign key constraint fails (`eatbetter`.`foodmethod`, CONSTRAINT `foodmethod_ibfk_1` FOREIGN KEY (`user_id`, `canteen_id`, `food_id`) REFERENCES `recommendedfood` (`user_id`, `canteen_id`, `food_id`)) in add_recommend_food.php
+[2015_08_29 18:17:15] : database error：Duplicate entry '1-1-19' for key 'PRIMARY' in add_recommend_food.php

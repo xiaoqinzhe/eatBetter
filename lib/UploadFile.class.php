@@ -25,8 +25,8 @@ class UploadFile{
         'thumbRemoveOrigin' =>  false,// 是否移除原图
         'zipImages'         =>  false,// 压缩图片文件上传*/
         );
-	private $errorNo=0;         //错误号
-	private $errorMsg="";             //错误详细信息
+	public $errorNo=0;         //错误号
+	public $errorMsg="";             //错误详细信息
 	private $fileInfo=array();       //上传文件的信息
 
 	/**
@@ -52,7 +52,7 @@ class UploadFile{
 		
 		if(!is_dir($savePath)){         //判断目录存不存在，不存在就创建
 			if(!mkdir($savePath,0777,true)){
-				$this->errorMes="创建目录失败";
+				$this->errorMsg="创建目录失败";
 				return false;
 			}
 		}
@@ -112,7 +112,7 @@ class UploadFile{
 				$savename=$subdir.'/'.$savename;
 				$dir=$savePath.'/'.$subdir;
 				if(!mkdir($dir,0777,true)){
-					$this->errorMes="创建子目录失败";
+					$this->errorMsg="创建子目录失败";
 					return false;
 				}
 			}
@@ -152,7 +152,7 @@ class UploadFile{
 		
 		if(!is_dir($savePath)){         //判断目录存不存在，不存在就创建
 			if(!mkdir($savePath,0777,true)){
-				$this->errorMes="创建目录失败";
+				$this->errorMsg="创建目录失败";
 				return false;
 			}
 		}
@@ -177,6 +177,7 @@ class UploadFile{
 		$file['extension']=$ext;
 		if(!empty($this->config['allowExts'])){				
 			if(!in_array(strtolower($ext),$this->config['allowExts'])){
+				$this->errorNo=9;
 				$this->errorMsg="文件类型错误";
 				return false;
 			}else {
@@ -205,7 +206,7 @@ class UploadFile{
 			$savename=$subdir.'/'.$savename;
 			$dir=$savePath.'/'.$subdir;
 			if(!mkdir($dir,0777,true)){
-				$this->errorMes="创建子目录失败";
+				$this->errorMsg="创建子目录失败";
 				return false;
 			}
 		}

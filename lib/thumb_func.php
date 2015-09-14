@@ -10,7 +10,7 @@
 * @return 缩略图文件名
 */
 
-function thumb($filename,$dst_w=null,$dst_h=null,$savepath=null,$ifdelsrc=true){
+function thumb($filename,$dst_w=null,$dst_h=null,$savepath=null,$ifdelsrc=false){
 	list($src_w,$src_h,$imagetype)=getimagesize($filename);
 	$scale=0.5;
 	if(is_null($dst_w)||is_null($dst_h)){
