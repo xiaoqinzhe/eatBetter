@@ -7,7 +7,7 @@ try {
 	$db->connect();
 	echo "success";
 } catch (Exception $e) {
-	echo $db->error;
+	echo $e->getMessage();
 }
 
 //echo urlencode('http://localhost/images/user/default.jpg');
