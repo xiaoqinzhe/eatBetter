@@ -1,6 +1,0 @@
-[2015_08_28 20:36:27] : database error：Unknown column 'canteenname' in 'field list' in get_recommend_food.php
-[2015_08_28 20:36:56] : database error：Unknown column 'canteen.canteen_id' in 'where clause' in get_recommend_food.php
-[2015_08_28 20:37:13] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and food_id=14 order by sequence' at line 2 in get_recommend_food.php
-[2015_08_28 20:39:28] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and food_id=14 order by sequence' at line 2 in get_recommend_food.php
-[2015_08_28 21:05:30] : database error：Table 'eatbetter.canteen_complaints_images' doesn't exist in get_complaints.php
-[2015_08_28 22:55:13] : database error： in add_complaint.php

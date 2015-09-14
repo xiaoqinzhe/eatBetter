@@ -3,9 +3,9 @@
 require_once('common/common_func.php');
 require_once('../lib/Db.class.php');
 
-$_POST['username']="xiao";        //测试数据
+/* $_POST['username']="xiao";        //测试数据
 $_POST['phone']="18819451372";
-$_POST['password']='123456';
+$_POST['password']='123456'; */
 
 if(!isset($_GET['type']))
 {	

@@ -3,13 +3,13 @@
 require_once('common/common_func.php');
 require_once('../lib/Db.class.php');
 
-$_POST['user_id']=1;        //测试数据
+/* $_POST['user_id']=1;        //测试数据
 $_POST['access_token']='9e5cd477f4ff4a04d915b3892e58c033';
 $_POST['new_username']="xiao";
 $_POST['old_password']='123456';
 $_POST['new_password']='123456';
 $_POST['force']=true;
-$_POST['new_sex']='男';
+$_POST['new_sex']='男'; */
 
 if(!isset($_GET['content']))
 	echo getJsonResponse(2,'参数没有设置',null);

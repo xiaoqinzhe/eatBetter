@@ -4,9 +4,9 @@ require_once('common/common_func.php');
 require_once('../lib/Db.class.php');
 require_once('../lib/Log.class.php');
 
-$_POST['comment_id']=1;
+/* $_POST['comment_id']=1;
 $_POST['user_id']=1;
-$_POST['food_id']=4;
+$_POST['food_id']=4; */
 
 if(isset($_GET['which'])){
 	if($_GET['which']=='comment'){

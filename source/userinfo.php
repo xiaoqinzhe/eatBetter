@@ -5,8 +5,8 @@ require_once('../lib/Db.class.php');
 require_once('../lib/Cache.class.php');
 require_once('../lib/Log.class.php');
 
-$_POST['user_id']=1;
-$_POST['access_token']='9e5cd477f4ff4a04d915b3892e58c033';
+/* $_POST['user_id']=1;
+$_POST['access_token']='9e5cd477f4ff4a04d915b3892e58c033'; */
 
 if(isset($_POST['user_id']))
 {

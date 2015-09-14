@@ -5,7 +5,7 @@ require_once('../lib/Db.class.php');
 require_once('../lib/Cache.class.php');
 require_once('../lib/Log.class.php');
 
-$_POST['school_id']=1;
+//$_POST['school_id']=1;
 
 if (isset($_POST['school_id'])){
 	$cache=new Cache();

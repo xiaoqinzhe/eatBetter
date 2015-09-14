@@ -1,3 +1,0 @@
-[2015_09_07 00:28:09] : database error：Unknown column 'Array' in 'where clause' in count_grade.php
-[2015_09_07 00:28:44] : database error：Unknown column 'Array' in 'where clause' in count_grade.php
-[2015_09_07 00:29:15] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where canteen_id=1 and food_id=2' at line 1 in count_grade.php

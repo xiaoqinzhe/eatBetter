@@ -3,7 +3,7 @@
 require_once('common/common_func.php');
 require_once '../lib/Cache.class.php' ;
 
-$_POST['school_id']=1;
+//$_POST['school_id']=1;
 
 if(isset($_GET['get'])){
 	if (isset($_POST['school_id'])){

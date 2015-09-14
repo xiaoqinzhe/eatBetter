@@ -1,7 +1,0 @@
-[2015_09_06 15:44:14] : database error：Unknown column 'canteens.school_id' in 'where clause' in count_ranking.php
-[2015_09_06 15:45:35] : database error：Unknown column 'canteens.school_id' in 'where clause' in count_ranking.php
-[2015_09_06 15:45:54] : database error：Unknown column 'canteens.school_id' in 'where clause' in count_ranking.php
-[2015_09_06 15:46:21] : database error：Unknown column 'canteens.school_id' in 'where clause' in count_ranking.php
-[2015_09_06 15:46:52] : database error：Unknown column 'canteens.school_id' in 'where clause' in count_ranking.php
-[2015_09_06 17:34:00] : database error：Unknown column 'canteen_name' in 'field list' in count_ranking.php
-[2015_09_06 17:34:16] : database error：Unknown column 'canteen_name' in 'field list' in count_ranking.php

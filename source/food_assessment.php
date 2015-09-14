@@ -4,10 +4,10 @@ require_once('common/common_func.php');
 require_once('../lib/Db.class.php');
 require_once('../lib/Log.class.php');
 
-$_POST['user_id']=1;
+/* $_POST['user_id']=1;
 $_POST['canteen_id']=1;
 $_POST['food_id']=2;
-$_POST['favor']=1;
+$_POST['favor']=1; */
 
 if(isset($_GET['type'])){
 	if(!isset($_POST['access_token'])){

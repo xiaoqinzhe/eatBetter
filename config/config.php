@@ -8,7 +8,7 @@ return array(
 		'serverIp' => 'sqsmei.sinaapp.com',
 		//数据库
 		//'host' => 'localhost',
-		'host' => ,SAE_MYSQL_HOST_M
+		'host' => SAE_MYSQL_HOST_M,
 		//'username' => 'root',
 		'username' => SAE_MYSQL_USER,
 		//'passwd' => 'root',

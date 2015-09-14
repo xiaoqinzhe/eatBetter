@@ -1,6 +1,0 @@
-[2015_09_08 23:27:32] : database error：Unknown column 'captcha' in 'field list' in sms_captcha.php
-[2015_09_08 23:28:03] : database error：Unknown column 'captcha' in 'field list' in sms_captcha.php
-[2015_09_08 23:39:29] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':05:00' at line 1 in clear_captcha_cache.php
-[2015_09_08 23:39:43] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':05:00' at line 1 in clear_captcha_cache.php
-[2015_09_08 23:40:07] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':01:00' at line 1 in clear_captcha_cache.php
-[2015_09_08 23:40:22] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':01:00' at line 1 in clear_captcha_cache.php

@@ -4,8 +4,8 @@ require_once('common/common_func.php');
 require_once('../lib/Db.class.php');
 require_once('../lib/Log.class.php');
 
-$_POST['device_id']=1;
-$_POST['oldversion']='0.0.0';
+/* $_POST['device_id']=1;
+$_POST['oldversion']='0.0.0'; */
 
 if(isset($_POST['device_id'])&&isset($_POST['oldversion'])){
 	list($major,$max,$min)=explode(".", $_POST['oldversion'],3);

@@ -1,8 +1,8 @@
 <?php 
 
-require_once('source/common/common_func.php');
+//require_once('source/common/common_func.php');
 
-echo urlencode('http://localhost/images/user/default.jpg');
+//echo urlencode('http://localhost/images/user/default.jpg');
 
 //preg_match_all("//", "http://localhost/images/user/default.jpg",$array);
 //var_dump(parse_url("http://localhost/images/user/default.jpg"));

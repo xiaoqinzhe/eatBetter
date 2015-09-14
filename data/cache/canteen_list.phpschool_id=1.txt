@@ -1,1 +1,0 @@
-000000001440002661{"statuscode":0,"message":"\u6210\u529f","data":[{"canteen_id":"1","canteenname":"\u7b2c\u4e00\u996d\u5802","imageurl":"http:\/\/localhost\/images\/canteens\/default.jpg"},{"canteen_id":"2","canteenname":"\u7b2c\u4e8c\u996d\u5802","imageurl":"http:\/\/localhost\/images\/canteens\/default.jpg"}]}

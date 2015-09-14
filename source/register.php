@@ -4,11 +4,11 @@ require_once('common/common_func.php');
 require_once('../lib/Db.class.php');
 require_once('../lib/Log.class.php');
 
-$_POST['username']="qiujiaman";
+/* $_POST['username']="qiujiaman";
 $_POST['password']='123456';
 $_POST['sex']='女';
 $_POST['phone']='18819451314';
-$_POST['school_id']='1';
+$_POST['school_id']='1'; */
 
 if(isset($_GET['type'])){
 	if($_GET['type']!='phone'&&$_GET['type']!='checkusername'){

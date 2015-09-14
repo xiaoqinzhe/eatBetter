@@ -5,11 +5,11 @@ require_once('../lib/Db.class.php');
 require_once('../lib/Log.class.php');
 require_once '../lib/UploadFile.class.php';
 
-$_POST['user_id']=1;
+/* $_POST['user_id']=1;
 $_POST['access_token']='9e5cd477f4ff4a04d915b3892e58c033';
 $_POST['canteen_id']=1;
 $_POST['foodname']='肖式炒饭';
-$_POST['content']=json_encode(array("1.aaa","2.bbbb/","3./\dfa"));
+$_POST['content']=json_encode(array("1.aaa","2.bbbb/","3./\dfa")); */
 
 if(isset($_POST['user_id'])&&isset($_POST['access_token'])&&isset($_POST['canteen_id'])&&isset($_POST['foodname'])){
 	$db=Db::getInstance(array('autocommit'=>false));

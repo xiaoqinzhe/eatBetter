@@ -5,8 +5,8 @@ require_once('common/VoiceVerify.php');
 require_once('../lib/Db.class.php');
 require_once('../lib/Log.class.php');
 
-$_POST['phone']='18819451372';
-$_POST['capture']='981s432';
+/* $_POST['phone']='18819451372';
+$_POST['capture']='981s432'; */
 
 $AccountSid='aaf98f894f16fdb7014f1adf248f043d';
 $AccountToken='423254c2e08a42d39b58b7be64f91d60';

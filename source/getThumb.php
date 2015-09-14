@@ -2,9 +2,9 @@
 
 require_once('common/common_func.php');
 
-$_GET['width']=20;
+/* $_GET['width']=20;
 $_GET['height']=20;
-$_GET['imageurl']="http%3A%2F%2Flocalhost%2Fimages%2Fuser%2Fdefault.jpg";
+$_GET['imageurl']="http%3A%2F%2Flocalhost%2Fimages%2Fuser%2Fdefault.jpg"; */
 
 if(isset($_GET['imageurl'])){
 	$_GET['imageurl']=urldecode($_GET['imageurl']);

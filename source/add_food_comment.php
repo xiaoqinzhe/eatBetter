@@ -5,10 +5,10 @@ require_once('../lib/Db.class.php');
 require_once('../lib/Log.class.php');
 require_once '../lib/UploadFile.class.php';
 
-$_POST['user_id']=1;
+/* $_POST['user_id']=1;
 $_POST['canteen_id']=1;
 $_POST['food_id']=3;
-$_POST['content']="shenmecaia..\';";
+$_POST['content']="shenmecaia..\';"; */
 
 if(isset($_POST['user_id'])&&isset($_POST['canteen_id'])&&isset($_POST['food_id'])
 		&&isset($_POST['content'])){

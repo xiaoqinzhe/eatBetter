@@ -5,8 +5,8 @@ require_once('../lib/Db.class.php');
 require_once('../lib/Cache.class.php');
 require_once('../lib/Log.class.php');
 
-$_POST['canteen_id']=1;
-$_POST['food_id']=3;
+/* $_POST['canteen_id']=1;
+$_POST['food_id']=3; */
 
 $count=10;
 if(isset($_GET['page'])){
