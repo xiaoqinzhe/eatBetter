@@ -2,7 +2,11 @@
 
 require_once('source/common/common_func.php');
 
-echo urlencode('http://localhost/images/user/default.jpg');
+var_dump(json_encode(false));
+
+/* $val="1";
+var_dump((bool)$val); */
+//echo urlencode('http://localhost/images/user/default.jpg');
 
 //preg_match_all("//", "http://localhost/images/user/default.jpg",$array);
 //var_dump(parse_url("http://localhost/images/user/default.jpg"));
