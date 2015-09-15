@@ -10,6 +10,7 @@ return array(
 		'username' => SAE_MYSQL_USER,
 		'passwd' => SAE_MYSQL_PASS,
 		'port' => SAE_MYSQL_PORT,
+		'dbname' => SAE_MYSQL_DB,
 		//上传文件
 		'savePath'     =>  '../uploads',
 		//缓存
