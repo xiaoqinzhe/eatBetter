@@ -4,10 +4,10 @@ require_once('common/common_func.php');
 require_once('../lib/Db.class.php');
 require_once('../lib/Log.class.php');
 
-$_POST['comment_id']=1;
+/* $_POST['comment_id']=1;
 $_POST['user_id']=1;
-$_POST['recommend_id']=1;
-$_POST['favor']='true';
+$_POST['recommend_id']=3;
+$_POST['favor']='true'; */
 
 
 if(isset($_GET['which'])){
@@ -61,15 +61,16 @@ try {
 		Log::error_log('database error：'.$db->error.' in '.basename(__FILE__));     //错误日志
 		exit();
 	}
-	if($db->execute($sq2)!==false){
+	if ($_GET['which']=='comment')
+	if($db->execute($sql2)!==false){
 		if($db->numRows==0)
 			echo getJsonResponse(2,"post id错误",null);
-		else
-			echo getJsonResponse(0,"success",null);
 	}else{
 		echo getJsonResponse(1,$db->error,null);
 		Log::error_log('database error：'.$db->error.' in '.basename(__FILE__));     //错误日志
+		exit();
 	}
+	echo getJsonResponse(0,"success",null);
 	$db->close();
 } catch (Exception $e) {
 	echo getJsonResponse(1,"数据库连接错误",null);

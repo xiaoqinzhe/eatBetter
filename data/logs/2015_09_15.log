@@ -1,2 +1,5 @@
 [2015_09_15 18:03:55] : count_ranking.php 连接数据库失败
 [2015_09_15 18:05:36] : count_ranking.php 连接数据库失败
+[2015_09_15 22:18:23] : database error：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1,'1.aaa','http://localhost/uploads/recommendedfood/default.jpg')' at line 1 in add_recommend_food.php
+[2015_09_15 22:41:14] : database error：查询字段不能为空 in favor.php
+[2015_09_15 22:41:57] : database error：Duplicate entry '1-1' for key 'PRIMARY' in favor.php

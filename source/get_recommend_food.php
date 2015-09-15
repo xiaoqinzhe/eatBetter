@@ -23,7 +23,7 @@ if(isset($_GET['page'])&&isset($_GET['come_true'])){
 			$from=((int)$_GET['page']-1)*$count;
 			if($_GET['come_true']=='yes')
 				$cometrue=1;
-			$sql="select recommendedfood.user_id,recommendedfood.canteen_id,recommendedfood.food_id,username,canteenname,
+			$sql="select recommend_id,recommendedfood.user_id,recommendedfood.canteen_id,recommendedfood.food_id,username,canteenname,
 				foodname,favor,recommendedfood.imageurl from users,canteens,food,recommendedfood
 				where users.user_id=recommendedfood.user_id and canteens.canteen_id=recommendedfood.canteen_id 
 				and food.food_id=recommendedfood.food_id
@@ -62,8 +62,7 @@ if(isset($_GET['page'])&&isset($_GET['come_true'])){
 }
 
 function getMethod(&$db,&$value){
-	$sql="select content,imageurl from foodmethod where user_id={$value['user_id']} and
-		 canteen_id={$value['canteen_id']} and food_id={$value['food_id']} order by sequence;";
+	$sql="select content,imageurl from foodmethod where recommend_id={$value['recommend_id']} order by sequence;";
 	$res=$db->query($sql);
 	if($res!==false){
 		$value['content']=array();
