@@ -10,4 +10,4 @@ try {
 	echo $e->getMessage();
 }
 var_dump(file_put_contents("aa.txt", "asdfas"));
-var_dump(file_exists($_SERVER['DOCUMENT_ROOT']."lib/Cache.class.php"));
+var_dump(file_exists($_SERVER['DOCUMENT_ROOT']."/lib/Cache.class.php"));

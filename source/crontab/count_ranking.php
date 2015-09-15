@@ -37,9 +37,10 @@ if($schoolids===false){
 			if(empty($canteen_info))
 				continue;
 			foreach ($canteen_info as &$value2){
-				
+				//计算食堂食物数量
+				countfood($db,$value2);
 			}
-		}
+		}		
 		//usort($canteen_info,"compare");
 		$json=getJsonResponse(0,'success',$canteen_info);
 		$cache->set($cachename, $json);
@@ -58,16 +59,36 @@ if($schoolids===false){
 			if(empty($food_info))
 				continue;
 			foreach ($food_info as &$value3){
-		
+				countComments($db,$value3);
 			}
 		}
 		//usort($food_info,"compare");
 		$json2=getJsonResponse(0,'success',$food_info);
 		$cachename="ranking.php".md5("getfood&schoolid={$value['school_id']}").'.txt';
 		$cache->set($cachename, $json2);
+		//echo json2;
 	}
 }
 
+function countfood(&$db,&$value){
+	$res=$db->query("select count(*) from canteen_food where canteen_id={$value['canteen_id']};");
+	if($res===false){
+		Log::error_log('database error：'.$db->error.' in '.basename(__FILE__));
+		$db->close();
+		exit();
+	}
+	$value['food_count']=$res[0]['count(*)'];
+}
+
+function countComments(&$db,&$value){
+	$res=$db->query("select count(*) from food_comments where canteen_id={$value['canteen_id']} and food_id={$value['food_id']};");
+	if($res===false){
+		Log::error_log('database error：'.$db->error.' in '.basename(__FILE__));
+		$db->close();
+		exit();
+	}
+	$value['commentscount']=$res[0]['count(*)'];
+}
 
 function compare($a,$b){
 	if($a['grade']<$b['grade'])
